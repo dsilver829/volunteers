@@ -1,8 +1,15 @@
 Volunteers::Application.routes.draw do
+  get "offers/new"
+
+  get "offers/create"
+
+  get "offers/index"
+
   devise_for :users
 
   resources :events
   resources :users
+  resources :offers
 
 
   # The priority is based upon order of creation:
