@@ -6,7 +6,12 @@ class OffersController < ApplicationController
       flash[:alert] = 'No event.'
       redirect_to root_url
     else
-      render
+      @offer = Offer.new
+
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @event }
+      end
     end
   end
 
