@@ -1,6 +1,6 @@
 <%= form_for(@offer) do |f| %>
   <% if @offer.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" xmlns="http://www.w3.org/1999/html">
       <h2><%= pluralize(@offer.errors.count, "error") %> prohibited this event from being saved:</h2>
 
       <ul>
@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= label_tag :event_id %></br>
+    <%= text_field_tag @event.name %>
+  </div>
   <div class="field">
     <%= f.label :availability %><br />
     <%= f.text_field :availability %>

@@ -1,6 +1,6 @@
 class OffersController < ApplicationController
   def new
-    @event = params[:event_id]
+    @event = Event.find(params[:event_id])
 
     if @event.nil?
       flash[:alert] = 'No event.'
@@ -16,6 +16,7 @@ class OffersController < ApplicationController
   end
 
   def create
+
   end
 
   def index
